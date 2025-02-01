@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import logo from '../assets/Logo.svg';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import logo from "../assets/Logo.svg";
 
 export default function TransparentHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [visible, setVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    // Открытие/закрытие меню
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const closeMenu = () => setIsMenuOpen(false);
 
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    };
-
+    // Скролл поведение хедера
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
@@ -26,11 +26,17 @@ export default function TransparentHeader() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY]);
 
-    // Функция плавного скролла
+    // Функция плавного скролла + переход на главную
     const scrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+        if (location.pathname !== "/") {
+            navigate("/"); // Переход на главную
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) element.scrollIntoView({ behavior: "smooth" });
+            }, 300);
+        } else {
+            const element = document.getElementById(id);
+            if (element) element.scrollIntoView({ behavior: "smooth" });
         }
         closeMenu();
     };
@@ -45,70 +51,55 @@ export default function TransparentHeader() {
             <div className="container mx-auto flex items-center justify-between p-4">
                 {/* Логотип */}
                 <div className="text-2xl font-bold">
-                    <a href="/" className="flex items-center gap-10">
+                    <button onClick={() => navigate("/")} className="flex items-center gap-4">
                         <img src={logo} alt="Logo" className="h-15 w-20" />
                         <span className="italic text-lg">GO`ZAL SMILE</span>
-                    </a>
+                    </button>
                 </div>
 
                 {/* Навигация */}
                 <nav className="hidden md:flex">
                     <ul className="flex gap-8">
-                        <li>
-                            <button onClick={() => scrollToSection('home')} className="hover:text-gray-400 font-poppins text-lg">
-                                Home
-                            </button>
-                        </li>
-                        <li>
-                            <button onClick={() => scrollToSection('about')} className="hover:text-gray-400 font-poppins text-lg">
-                                About
-                            </button>
-                        </li>
-                        <li>
-                            <button onClick={() => scrollToSection('contact')} className="hover:text-gray-400 font-poppins text-lg">
-                                Contact
-                            </button>
-                        </li>
-                        <li>
-                            <button onClick={() => scrollToSection('portfolio')} className="hover:text-gray-400 font-poppins text-lg">
-                                Portfolio
-                            </button>
-                        </li>
+                        {["home", "about", "portfolio", "contact"].map((id) => (
+                            <li key={id}>
+                                <button
+                                    onClick={() => scrollToSection(id)}
+                                    className="hover:text-gray-400 font-poppins text-lg cursor-pointer"
+                                >
+                                    {id.charAt(0).toUpperCase() + id.slice(1)}
+                                </button>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
 
                 {/* Кнопка мобильного меню */}
                 <button className="md:hidden text-2xl" onClick={toggleMenu}>
-                    {isMenuOpen ? 'X' : '☰'}
+                    {isMenuOpen ? "X" : "☰"}
                 </button>
             </div>
 
             {/* Мобильное меню */}
             {isMenuOpen && (
-                <nav className="md:hidden bg-black bg-opacity-50 absolute w-full top-0 left-0 p-4">
+                <motion.nav
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    className="md:hidden bg-black bg-opacity-50 absolute w-full top-0 left-0 p-4"
+                >
                     <ul className="flex flex-col gap-6 items-center">
-                        <li>
-                            <button onClick={() => scrollToSection('home')} className="hover:text-gray-400 font-poppins text-lg">
-                                Home
-                            </button>
-                        </li>
-                        <li>
-                            <button onClick={() => scrollToSection('about')} className="hover:text-gray-400 font-poppins text-lg">
-                                About
-                            </button>
-                        </li>
-                        <li>
-                            <button onClick={() => scrollToSection('contact')} className="hover:text-gray-400 font-poppins text-lg">
-                                Contact
-                            </button>
-                        </li>
-                        <li>
-                            <button onClick={() => scrollToSection('portfolio')} className="hover:text-gray-400 font-poppins text-lg">
-                                Portfolio
-                            </button>
-                        </li>
+                        {["home", "about", "portfolio", "contact"].map((id) => (
+                            <li key={id}>
+                                <button
+                                    onClick={() => scrollToSection(id)}
+                                    className="hover:text-gray-400 font-poppins text-lg cursor-pointer"
+                                >
+                                    {id.charAt(0).toUpperCase() + id.slice(1)}
+                                </button>
+                            </li>
+                        ))}
                     </ul>
-                </nav>
+                </motion.nav>
             )}
         </motion.header>
     );

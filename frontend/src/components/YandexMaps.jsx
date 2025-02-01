@@ -40,7 +40,7 @@ const YandexMap = () => {
                         <p className="text-lg text-gray-700">Ваш надежный партнер в стоматологии</p>
                     </div>
                     <p className="text-lg text-gray-700 mb-4">
-                        Адрес: ул. Примерная, 123, Ташкент, Узбекистан
+                        Ташкент, Мирзо-Улугбекский район, массив Ирригатор, 7
                     </p>
                     <p className="text-lg text-gray-700 mb-4">
                         Телефон: <a href="tel:+998 97 988 99 99" className="text-blue-500 hover:text-blue-700 font-semibold">+998 97 988 99 99</a>
