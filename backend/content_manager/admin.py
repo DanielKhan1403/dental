@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PortfolioItem, PortfolioImage, Service, TeamSection
+from .models import PortfolioItem, PortfolioImage, Service, TeamSection, PortfolioCategory, Video
 
 
 # Register your models here.
@@ -26,3 +26,13 @@ class TeamSectionAdmin(admin.ModelAdmin):
     list_display = ("name", "specialization")
     search_fields = ("name", "specialization")
 
+
+@admin.register(PortfolioCategory)
+class PortfolioCategoryAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Video)
+class VideoAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_at', 'video_file', 'thumbnail')
+    search_fields = ('title', 'description')

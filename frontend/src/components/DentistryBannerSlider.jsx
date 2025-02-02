@@ -30,20 +30,23 @@ const DentistryBannerSlider = () => {
                 </>
             ),
             buttonText: 'Записаться на прием',
+            link: 'https://t.me/dr_azizov_komiljon', // Ссылка на Telegram
         },
         {
             id: 2,
             background: banner2,
             title: 'Идеальная улыбка для вас',
             subtitle: 'Мы создаем улыбки, которые вдохновляют.',
-            buttonText: 'Подробнее о нас',
+            buttonText: 'Наш Telegram',
+            link: 'https://t.me/dr_azizov_komiljon', // Ссылка на Telegram
         },
         {
             id: 3,
             background: banner3,
             title: 'Забота о пациентах',
             subtitle: 'Профессиональный подход и новейшие технологии.',
-            buttonText: 'Подробнее о нас',
+            buttonText: 'Связаться в Telegram',
+            link: 'https://t.me/dr_azizov_komiljon', // Ссылка на Telegram
         },
     ];
 
@@ -86,9 +89,12 @@ const DentistryBannerSlider = () => {
                                     {slide.subtitle}
                                 </p>
                             )}
-                            <div className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-3 rounded-full shadow-xl cursor-pointer">
+                            <button
+                                onClick={() => window.open(slide.link, '_blank')} // Открытие в новом окне
+                                className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-3 rounded-full shadow-xl cursor-pointer"
+                            >
                                 {slide.buttonText}
-                            </div>
+                            </button>
                         </motion.div>
                     </div>
                 </SwiperSlide>

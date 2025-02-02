@@ -60,7 +60,7 @@ export default function TransparentHeader() {
                 {/* Навигация */}
                 <nav className="hidden md:flex">
                     <ul className="flex gap-8">
-                        {["home", "about", "portfolio", "contact"].map((id) => (
+                        {["home", "about", "portfolio", "contact", "video"].map((id) => (
                             <li key={id}>
                                 <button
                                     onClick={() => scrollToSection(id)}
@@ -88,7 +88,7 @@ export default function TransparentHeader() {
                     className="md:hidden bg-black bg-opacity-50 absolute w-full top-0 left-0 p-4"
                 >
                     <ul className="flex flex-col gap-6 items-center">
-                        {["home", "about", "portfolio", "contact"].map((id) => (
+                        {["home", "about", "portfolio", "contact", "video"].map((id) => (
                             <li key={id}>
                                 <button
                                     onClick={() => scrollToSection(id)}

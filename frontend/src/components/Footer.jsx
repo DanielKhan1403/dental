@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaTelegram} from "react-icons/fa";
 import image from '../assets/bottom-block.jpg';
 
 
@@ -29,10 +29,9 @@ export default function Footer() {
 
                     {/* Социальные сети */}
                     <div className="flex space-x-6 text-xl">
-                        <a href="#" className="hover:text-gray-400 transition"><FaFacebookF /></a>
-                        <a href="#" className="hover:text-gray-400 transition"><FaInstagram /></a>
-                        <a href="#" className="hover:text-gray-400 transition"><FaTwitter /></a>
-                        <a href="#" className="hover:text-gray-400 transition"><FaLinkedin /></a>
+                        <a href="https://t.me/dr_azizov_komiljon" className="hover:text-gray-400 transition"><FaTelegram /></a>
+                        <a href="https://www.instagram.com/gozalsmiledentalclinic/" className="hover:text-gray-400 transition"><FaInstagram /></a>
+
                     </div>
                 </div>
 

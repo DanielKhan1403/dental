@@ -9,6 +9,7 @@ import Portfolio from "./components/Portfolio";
 import ServicesSection from "./components/Services";
 import PortfolioPage from "./pages/PortfolioPage.jsx";
 import Footer from "./components/Footer.jsx";
+import VideoGallery from "./components/VideoGallery.jsx";
 
 function HomePage() {
     const navigate = useNavigate(); // Правильное место для useNavigate()
@@ -37,6 +38,9 @@ function HomePage() {
             </div>
             <div id="contact">
                 <YandexMap />
+            </div>
+            <div id="video">
+                <VideoGallery />
             </div>
             <Footer/>
         </>
