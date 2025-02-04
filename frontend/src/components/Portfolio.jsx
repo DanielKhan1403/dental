@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Modal from "react-modal";
-
+import {MainUrl} from "../../MainUrl.js";
 // Настроим модальное окно для доступности
 Modal.setAppElement("#root");
 
@@ -13,7 +13,7 @@ const Portfolio = ({ limit = null }) => {
     const [selectedImage, setSelectedImage] = useState("");
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/api/portfolio/") // Укажите ваш API URL
+        fetch(`${MainUrl}portfolio/`) // Укажите ваш API URL
             .then((response) => response.json())
             .then((data) => {
                 setPortfolioItems(data);

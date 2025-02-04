@@ -4,7 +4,7 @@ import { FaTelegramPlane, FaInstagram } from 'react-icons/fa'; // Импорти
 import logo from '../assets/Logo.svg'
 const YandexMap = () => {
     return (
-        <div className="container mx-auto p-6 bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg shadow-lg">
+        <div className="container mx-auto p-6  rounded-lg shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Карта */}
                 <div className="relative overflow-hidden rounded-lg shadow-xl bg-white">

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import {MainUrl} from "../../MainUrl.js";
 
 const VideoGallery = () => {
     const [videos, setVideos] = useState([]);
@@ -8,7 +9,7 @@ const VideoGallery = () => {
     useEffect(() => {
         // Загрузка видео с сервера
         axios
-            .get("http://127.0.0.1:8000/api/video/")
+            .get(`${MainUrl}video/`)
             .then((response) => {
                 setVideos(response.data);
             })

@@ -20,8 +20,8 @@ const DentistryTeamSection = () => {
     }, []);
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 p-6">
-            <div className="w-full px-6 md:px-12 lg:px-24 py-16 bg-gradient-to-br from-blue-500 to-purple-600 shadow-xl flex-grow">
+        <div className="flex items-center justify-center min-h-screen p-6">
+            <div className="w-full px-6 md:px-12 lg:px-24 py-16 flex-grow">
                 <h2 className="text-center text-3xl md:text-4xl font-bold mb-12">
                     Наша команда специалистов
                 </h2>

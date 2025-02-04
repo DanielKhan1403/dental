@@ -15,7 +15,7 @@ const AboutUs = () => {
                     initial={{ y: -20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.2 }}
-                    className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600"
+                    className="text-4xl font-bold text-center text-transparent bg-clip-text "
                 >
                     Почему Go’zal Smile – лучшая стоматология в Ташкенте?
                 </motion.h1>

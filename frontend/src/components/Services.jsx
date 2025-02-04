@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import {MainUrl} from "../../MainUrl.js";
 
 const ServicesSection = () => {
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/api/services/") // Укажите ваш API URL
+        fetch(`${MainUrl}services/`) // Укажите ваш API URL
             .then((response) => response.json())
             .then((data) => {
                 setServices(data);
@@ -19,7 +20,7 @@ const ServicesSection = () => {
     }, []);
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 p-6">
+        <div className="flex items-center justify-center min-h-screen p-6">
             <div className="w-full max-w-6xl text-center">
                 <h2 className="text-4xl font-bold text-white mb-12">Наши услуги</h2>
                 {loading ? (

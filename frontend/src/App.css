@@ -1,18 +1,30 @@
 @import "tailwindcss";
 
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* App.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #E3F2FD, #BBDEFB, #90CAF9, #64B5F6, #42A5F5);
+    background-size: 300% 300%;
+    animation: gradientBG 10s ease infinite;
 }
 
-.animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient-animation 3s ease infinite;
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+ #about, #portfolio, #services, #contact, #video {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
 }
