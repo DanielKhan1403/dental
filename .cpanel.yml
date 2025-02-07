@@ -1,20 +1,22 @@
 ---
 deployment:
   tasks:
-    # Указываем путь, куда деплоить (замени `username` на свой логин в cPanel)
-    - export BACKEND_PATH=/home/mysitete/backend
-    - export FRONTEND_PATH=/home/mysitete/frontend
+    # Указываем пути развертывания
+    - export BACKEND_PATH=/home/mysitete/dental/backend
+    - export FRONTEND_PATH=/home/mysitete/dental/frontend
     - export PUBLIC_HTML=/home/mysitete/public_html
 
-    # 1️⃣ Удаляем старые файлы (чтобы не было мусора)
-    - rm -rf $BACKEND_PATH $FRONTEND_PATH
-
-    # 2️⃣ Копируем файлы из Git
+    # 1️⃣ Создаём папки, если их нет
     - mkdir -p $BACKEND_PATH $FRONTEND_PATH
+
+    # 2️⃣ Удаляем старые файлы
+    - rm -rf $BACKEND_PATH/* $FRONTEND_PATH/*
+
+    # 3️⃣ Копируем файлы из репозитория
     - cp -R backend/* $BACKEND_PATH/
     - cp -R frontend/* $FRONTEND_PATH/
 
-    # 3️⃣ Настраиваем виртуальное окружение для Django
+    # 4️⃣ Настраиваем виртуальное окружение для Django
     - cd $BACKEND_PATH
     - python3 -m venv venv
     - source venv/bin/activate
@@ -23,7 +25,7 @@ deployment:
     - python manage.py migrate
     - python manage.py collectstatic --noinput
 
-    # 4️⃣ Собираем фронтенд (Vite)
+    # 5️⃣ Собираем фронтенд (Vite)
     - cd $FRONTEND_PATH
     - npm install
     - npm run build
