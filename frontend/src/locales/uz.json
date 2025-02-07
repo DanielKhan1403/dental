@@ -12,7 +12,23 @@
     "logo": "GO`ZAL SMILE",
     "menu": "Menu",
     "close": "Yopish"
+  },
+  "about_us": {
+    "title": "Nima uchun Go’zal Smile – Toshkentdagi eng yaxshi stomatologiya?",
+    "description": "Go’zal Smile – ilg‘or texnologiyalar, professionallik va yuqori darajadagi xizmat. Biz sizning tabassumingiz haqida g‘amxo‘rlik qilamiz!",
+    "features": [
+      "Ko‘p yillik tajribaga ega mutaxassislar",
+      "Og‘riqsiz davolash uchun zamonaviy uskunalar",
+      "Tish shifokorlik xizmatlarining to‘liq spektri",
+      "Sterillik va xavfsizlikning qat'iy standartlari",
+      "Mos narxlar va qulay to‘lov variantlari",
+      "Bemorlar uchun shinam va qulay muhit"
+    ],
+    "cta": "Qabulga yozilish"
   }
 
 
+
 }
+
+

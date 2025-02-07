@@ -1,8 +1,10 @@
-
-import React from 'react';
+import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const AboutUs = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="">
             <motion.div
@@ -15,9 +17,9 @@ const AboutUs = () => {
                     initial={{ y: -20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.2 }}
-                    className="text-4xl font-bold text-center text-transparent bg-clip-text "
+                    className="text-4xl font-bold text-center text-transparent bg-clip-text"
                 >
-                    Почему Go’zal Smile – лучшая стоматология в Ташкенте?
+                    {t("about_us.title")}
                 </motion.h1>
 
                 <motion.p
@@ -26,18 +28,11 @@ const AboutUs = () => {
                     transition={{ duration: 1, delay: 0.4 }}
                     className="mt-4 text-lg text-gray-700 text-center"
                 >
-                    Go’zal Smile – это передовые технологии, профессионализм и высокий уровень сервиса. Мы заботимся о вашей улыбке!
+                    {t("about_us.description")}
                 </motion.p>
 
                 <div className="mt-6 space-y-4">
-                    {[
-                        "Опытные специалисты с многолетним стажем",
-                        "Современное оборудование для безболезненного лечения",
-                        "Полный спектр стоматологических услуг",
-                        "Строгие стандарты стерильности и безопасности",
-                        "Гибкие цены и удобные варианты оплаты",
-                        "Уютная и комфортная атмосфера для пациентов",
-                    ].map((text, index) => (
+                    {t("about_us.features", { returnObjects: true }).map((text, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, x: -50 }}
@@ -61,13 +56,11 @@ const AboutUs = () => {
                         href="tel:+998XX-XXX-XX-XX"
                         className="px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition duration-300"
                     >
-                        Записаться на прием
+                        {t("about_us.cta")}
                     </a>
                 </motion.div>
             </motion.div>
-
         </div>
-
     );
 };
 

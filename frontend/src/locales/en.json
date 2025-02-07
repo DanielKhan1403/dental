@@ -12,7 +12,22 @@
     "logo": "GO`ZAL SMILE",
     "menu": "Menu",
     "close": "Close"
+  },
+  "about_us": {
+    "title": "Why is Go’zal Smile the best dentistry in Tashkent?",
+    "description": "Go’zal Smile is advanced technology, professionalism, and a high level of service. We care about your smile!",
+    "features": [
+      "Experienced specialists with many years of experience",
+      "Modern equipment for painless treatment",
+      "Full range of dental services",
+      "Strict standards of sterility and safety",
+      "Flexible prices and convenient payment options",
+      "Cozy and comfortable atmosphere for patients"
+    ],
+    "cta": "Make an appointment"
   }
+
+
 
 
 }
