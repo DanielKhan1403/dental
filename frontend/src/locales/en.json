@@ -25,7 +25,27 @@
       "Cozy and comfortable atmosphere for patients"
     ],
     "cta": "Make an appointment"
+  },
+
+  "banner": {
+    "slide1": {
+      "title": "Modern dental clinic \nin Tashkent",
+      "subtitle": "Why is modern dentistry about comfort and confidence?\n1. Technological advancements\n2. Painless procedures\n3. Personalized approach\n4. Aesthetic dentistry\n5. Prevention and education\n6. Information accessibility\n7. Psychological comfort",
+      "buttonText": "Make an appointment"
+    },
+    "slide2": {
+      "title": "A perfect smile for you",
+      "subtitle": "We create smiles that inspire.",
+      "buttonText": "Our Telegram"
+    },
+    "slide3": {
+      "title": "Patient care",
+      "subtitle": "Professional approach and cutting-edge technology.",
+      "buttonText": "Contact on Telegram"
+    }
   }
+
+
 
 
 

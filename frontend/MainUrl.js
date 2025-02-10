@@ -1,1 +1,1 @@
-export const MainUrl = 'http://127.0.0.1:8000/api/'
+export const MainUrl = 'https://mysitetest.uz/api/'

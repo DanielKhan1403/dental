@@ -12,7 +12,7 @@ import ServicesSection from './components/Services';
 import PortfolioPage from './pages/PortfolioPage.jsx';
 import Footer from './components/Footer.jsx';
 import VideoGallery from './components/VideoGallery.jsx';
-import LanguageSwitcher from './components/LanguageSwitcher'; // импортируем переключатель языков
+
 import './i18n';  // Импортируем конфигурацию i18next
 
 function HomePage() {

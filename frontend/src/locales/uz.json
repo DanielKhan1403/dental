@@ -25,7 +25,27 @@
       "Bemorlar uchun shinam va qulay muhit"
     ],
     "cta": "Qabulga yozilish"
+  },
+
+  "banner": {
+    "slide1": {
+      "title": "Zamonaviy stomatologiya klinikasi \nToshkentda",
+      "subtitle": "Nima uchun zamonaviy stomatologiya – bu qulaylik va ishonch?\n1. Texnologik yutuqlar\n2. Og‘riqsiz muolajalar\n3. Individual yondashuv\n4. Estetik stomatologiya\n5. Profilaktika va ta'lim\n6. Ma'lumotlarning mavjudligi\n7. Psixologik qulaylik",
+      "buttonText": "Qabulga yozilish"
+    },
+    "slide2": {
+      "title": "Siz uchun mukammal tabassum",
+      "subtitle": "Biz ilhomlantiruvchi tabassumlar yaratamiz.",
+      "buttonText": "Bizning Telegram"
+    },
+    "slide3": {
+      "title": "Bemorlar haqida g‘amxo‘rlik",
+      "subtitle": "Professional yondashuv va zamonaviy texnologiyalar.",
+      "buttonText": "Telegramda bog‘lanish"
+    }
   }
+
+
 
 
 
